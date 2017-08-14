@@ -1,6 +1,6 @@
 {
   "name": "angular-webservice",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AngularJS Service for Webservices network calls",
   "main": "index.js",
   "repository": "https://github.com/jmouriz/angular-webservice",
