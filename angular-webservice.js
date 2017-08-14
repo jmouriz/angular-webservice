@@ -4,6 +4,8 @@
    
    angular.module('ngWebservice', []).service('$webservice', ['$window', '$http', '$timeout', '$q', function($window, $http, $timeout, $q) {
       var $this = this;
+
+      $this.timeout = 30; /* seconds => todo: config */
    
       $this.get = function(service, action, data) { 
          /*
@@ -28,7 +30,7 @@
          */
       };
    
-      $this.request = function(url, action, data) { 
+      $this.request = function(url, data) { 
          //$$('Application').busy(true);
          var canceller = $q.defer();
          var success = false; /* todo => utilizar la promesa */
@@ -67,7 +69,7 @@
                */
                canceller.resolve('timeout');
             }
-         }, config.timeout * 1000);
+         }, $this.timeout * 1000);
          return promise;
       }
    
